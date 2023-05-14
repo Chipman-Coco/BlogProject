@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'blog.android.chipman'
+    namespace 'com.chipman.blog.examples'
     compileSdk 32
 
     defaultConfig {
-        applicationId "blog.android.chipman"
+        applicationId "com.chipman.blog.examples"
         minSdk 21
         targetSdk 32
         versionCode 1
