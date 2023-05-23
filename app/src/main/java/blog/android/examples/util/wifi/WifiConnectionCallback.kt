@@ -1,4 +1,4 @@
-package blog.android.chipman.util.wifi
+package blog.android.examples.util.wifi
 
 interface WifiConnectionCallback {
 

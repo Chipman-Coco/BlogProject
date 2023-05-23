@@ -1,4 +1,4 @@
-package blog.android.chipman
+package blog.android.examples
 
 import org.junit.Test
 

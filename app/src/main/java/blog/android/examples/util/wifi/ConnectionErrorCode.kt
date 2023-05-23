@@ -1,4 +1,4 @@
-package blog.android.chipman.util.wifi
+package blog.android.examples.util.wifi
 
 /**
  * 尝试连接到wifi网络时可能发生的错误
