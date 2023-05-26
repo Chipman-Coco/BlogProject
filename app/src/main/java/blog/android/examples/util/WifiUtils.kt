@@ -182,17 +182,19 @@ object WifiUtils {
     ): Boolean {
         val networkSpecifier = WifiNetworkSpecifier.Builder().apply {
             setWpa2Passphrase(password)
-            if (bssid == null) {
+            if (bssid.isNullOrEmpty()) {
                 setSsidPattern(PatternMatcher(ssid, PatternMatcher.PATTERN_PREFIX))
             } else {
                 setSsid(ssid)
-                setBssid(MacAddress.fromString(ssid))
+                setBssid(MacAddress.fromString(bssid))
             }
         }.build()
 
         val networkRequest = NetworkRequest.Builder()
             .addTransportType(NetworkCapabilities.TRANSPORT_WIFI)
             .setNetworkSpecifier(networkSpecifier)
+//            .removeCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
+//            .addCapability(NetworkCapabilities.NET_CAPABILITY_TRUSTED)        //信任网络，增加这个参数让设备连接wifi之后还联网
             .addCapability(NetworkCapabilities.NET_CAPABILITY_NOT_RESTRICTED)   // 网络不受限
             .build()
 
